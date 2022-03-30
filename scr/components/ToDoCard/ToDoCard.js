@@ -1,12 +1,11 @@
 import {View, Text, FlatList, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './ToDoCard.style';
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import IconCard from '../IconCard';
 
 
 
 const ToDoCard = ({todos, onDeltask}) => {
-  const circle = <Icon name="circle-o" size={25} color="#eeee" />;
   listItemHandler = ({item, index}) => (
     <TouchableOpacity onPress={() => onDeltask(index)} style={styles.container}>
       <View style={styles.innerContainer}>
@@ -15,9 +14,7 @@ const ToDoCard = ({todos, onDeltask}) => {
           <Text style={styles.innerText}>{item}</Text>
         </View>
       </View>
-      <View style={{flexDirection: 'row'}}>
-        {circle}
-      </View>
+      <IconCard name="circle-o" />
     </TouchableOpacity>
   );
   return (

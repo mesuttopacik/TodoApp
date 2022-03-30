@@ -2,11 +2,9 @@ import {View, Text, FlatList, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './DoneCard.style';
 
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
-
+import IconCard from '../IconCard';
 
 const DoneCard = ({DoneTodos, remove}) => {
-  const checked = <Icon name="times-circle-o" size={25} color="#eeee" />;
   listItemHandler = ({item, index}) => (
     <TouchableOpacity
       onPress={() => {
@@ -19,10 +17,7 @@ const DoneCard = ({DoneTodos, remove}) => {
           <Text style={styles.innerText}>{item}</Text>
         </View>
       </View>
-      <View style={{flexDirection: 'row'}}>
-      {checked}
-      </View>
-      
+      <IconCard name="times-circle-o" />
     </TouchableOpacity>
   );
   return (
