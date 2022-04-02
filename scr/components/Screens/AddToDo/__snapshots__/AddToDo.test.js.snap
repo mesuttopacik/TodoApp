@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddToDo tests should match with snapshot 1`] = `
+<View
+  behavior="padding"
+  enabled={true}
+  style={
+    Object {
+      "backgroundColor": "#FFFBE9",
+      "flex": 1,
+    }
+  }
+>
+  <View>
+    <RCTScrollView
+      data={Array []}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      keyExtractor={[Function]}
+      onContentSizeChange={[Function]}
+      onLayout={[Function]}
+      onMomentumScrollBegin={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      testID="undone-task"
+      viewabilityConfigCallbackPairs={Array []}
+    >
+      <View />
+    </RCTScrollView>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "bottom": 50,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-evenly",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <TextInput
+      onChangeText={[Function]}
+      placeholder="Add.."
+      style={
+        Object {
+          "backgroundColor": "#FFFBE9",
+          "borderColor": "#D18CE0",
+          "borderRadius": 55,
+          "borderWidth": 1,
+          "padding": 16,
+          "width": "80%",
+        }
+      }
+      testID="todo-input"
+    />
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="button-toucable"
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#D18CE0",
+            "borderColor": "#D18CE0",
+            "borderRadius": 25,
+            "borderWidth": 1,
+            "height": 50,
+            "justifyContent": "center",
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#FFFBE9",
+              "fontSize": 20,
+            }
+          }
+        >
+          +
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

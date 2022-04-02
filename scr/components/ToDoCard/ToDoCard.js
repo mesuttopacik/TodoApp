@@ -3,8 +3,6 @@ import React from 'react';
 import styles from './ToDoCard.style';
 import IconCard from '../IconCard';
 
-
-
 const ToDoCard = ({todos, onDeltask}) => {
   listItemHandler = ({item, index}) => (
     <TouchableOpacity onPress={() => onDeltask(index)} style={styles.container}>
@@ -20,9 +18,10 @@ const ToDoCard = ({todos, onDeltask}) => {
   return (
     <View>
       <FlatList
+      testID='undone-task'
         data={todos}
         renderItem={listItemHandler}
-        keyExtractor={todos.index}
+        keyExtractor={(_, i) => i.toString()}
       />
     </View>
   );

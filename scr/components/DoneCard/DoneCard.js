@@ -25,7 +25,7 @@ const DoneCard = ({DoneTodos, remove}) => {
       <FlatList
         data={DoneTodos}
         renderItem={listItemHandler}
-        keyExtractor={DoneTodos.index}
+        keyExtractor= {(_,i) => i.toString()}
       />
     </View>
   );

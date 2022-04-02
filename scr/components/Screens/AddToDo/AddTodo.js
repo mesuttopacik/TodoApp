@@ -1,16 +1,9 @@
 import React, {useState} from 'react';
-import {
-  Text,
-  KeyboardAvoidingView,
-  Platform,
-  TextInput,
-  TouchableOpacity,
-  View,
-  ScrollView,
-} from 'react-native';
+import {Text, Platform, TextInput, TouchableOpacity, View} from 'react-native';
 import styles from './AddToDo.style';
 import ToDoCard from '../../ToDoCard';
 import {useDispatch} from 'react-redux';
+import Addbutton from '../../AddButton';
 
 const AddToDo = () => {
   const [task, setTask] = useState();
@@ -21,6 +14,9 @@ const AddToDo = () => {
     dispatch({type: 'DONE_TASK', payload: {toDo: doneTask}});
   };
   const toDoHandler = () => {
+    if (!task) {
+      return;
+    }
     setTodos([...todos, task]);
     setTask('');
   };
@@ -32,23 +28,20 @@ const AddToDo = () => {
     setTodos(todosCopy);
   };
   return (
-    <View 
-    enabled
-    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-    style={styles.container}>
+    <View
+      enabled
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}>
       <ToDoCard todos={todos} onDeltask={onDeltask} />
-      <View
-        style={styles.addToDoWrapper}>
+      <View style={styles.addToDoWrapper}>
         <TextInput
+        testID='todo-input'
+        placeholder='Add..'
           style={styles.textInput}
           onChangeText={text => setTask(text)}
           value={task}
-          />
-        <TouchableOpacity onPress={toDoHandler}>
-          <View style={styles.addButtonWrapper}>
-            <Text style={styles.addText}>+</Text>
-          </View>
-        </TouchableOpacity>
+        />
+        <Addbutton onClick={toDoHandler} />
       </View>
     </View>
   );
